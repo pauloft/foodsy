@@ -1,0 +1,54 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+{% if title %} {{title}} - Food Nutrients {% else %} Food Nutrients {% endif %}
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/foods.css')}}" />
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <ul class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarToggle"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('index') }}">Food Nutrients</a>
+        </div>
+        <ul class="collapse navbar-collapse" id="navbarToggle">
+            <ul class="nav navbar-nav">
+                <li><a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a></li>
+                <li><a class="nav-item nav-link" href="{{ url_for('search') }}">Search</a></li>
+                <li><a class="nav-item nav-link" href="{{ url_for('about') }}">About</a></li>
+                <li><a class="nav-item nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <!-- Navbar Right Side -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="nav-item nav-link" href="/login">Login</a></li>
+                <li><a class="nav-item nav-link" href="/register">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="body-content container">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <div class="alert alert-info" role="alert">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+    {# application content needs to be provided in the app_content block #}
+    {% block app_content %}{% endblock %}
+</div>
+{% endblock%}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/foods.js') }}"></script>
+{% endblock %}

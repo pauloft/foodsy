@@ -1,0 +1,40 @@
+.navbar {
+    background-color: rgb(119, 153, 136);
+    font-size: 1em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    padding: 8px 5px 8px 5px;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-nav a:hover {
+    color: black;
+}
+
+.navbar li:hover {
+    background-color: rgb(119, 153, 136);
+}
+
+.navbar-brand {
+    font-size: 2em;
+    font-weight: 600;
+    color: inherit;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 30px;
+}
+
+.body-content {
+    padding: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.capitalize-food-name {
+    text-transform: capitalize;
+}

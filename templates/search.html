@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block app_content %}
+<h2>Food Search</h2>
+<div class="row">
+    <div class="col-md-6">Enter food items for which you need to to search. Use a comma (,) <u>ONLY</u> to separate individual items. Examples are shown.</div>
+    <div class="col-md-6"><p>Examples:</p> <p>To search for a single food item, enter:<br><strong>whole pinaple</strong></p> <p>To search for three items:<br><strong>brown rice, whole pineapple, canned tomato juice</strong></div>
+</div>
+
+<div class="row">
+<form id="foodSearchForm">
+    
+    <div class="col-md-8">
+        <!--Food Search terms-->
+        <div class="sm-form form-group">
+            <label class="sr-only" for="searchText">Food Search</label>
+            <input type="text" style={width:100%;} class="form-control" id="searchText" placeholder="e.g. brown rice, lima beans">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <!--Submit Button-->
+        <button type="submit" class="btn btn-default">Look Up</button>
+    </div>
+    
+</form>
+</div>
+
+<div class="row" id="output"></div>
+
+</br>
+{% endblock %}

@@ -1,0 +1,5 @@
+__pycache__
+.vscode
+venv/
+food_search_results.json
+
